@@ -3,7 +3,7 @@
 public class TestScore
 {
     public static void Main()
-    {
+    {   //vars
         string name;
         double score;
 
