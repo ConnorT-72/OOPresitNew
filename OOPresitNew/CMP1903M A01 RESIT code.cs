@@ -3,49 +3,50 @@
 public class TestScore
 {
     public static void Main()
-    {   //vars
+    {
         string name;
         double score;
 
-        Console.WriteLine("Welcome to the Acme Student Test Score commentor");
+        Console.WriteLine("Welcome to the Acme Student Test Score commentator");
 
-        Console.WriteLine("Enter your name: ");
-        name = Console.ReadLine();
-
-        Console.WriteLine("Enter the test score: ");
-        if (double.TryParse(Console.ReadLine(), out score))
+        while (true)
         {
-            //this section is what defines what test scores are a pass or fail
-            if (score >= 0 && score <= 100)
-            {
-                Console.WriteLine("Hello {0}", name);
-                Console.WriteLine("You scored {0}", score);
+            Console.WriteLine("Enter your name (or 'exit' to quit): ");
+            name = Console.ReadLine();
 
-                if (score < 40)
+            if (name.ToLower() == "exit")
+                break;
+
+            Console.WriteLine("Enter the test score: ");
+            if (double.TryParse(Console.ReadLine(), out score))
+            {
+                if (score >= 0 && score <= 100)
                 {
-                    Console.WriteLine("This is a FAIL score");
+                    Console.WriteLine("Hello {0}", name);
+                    Console.WriteLine("You scored {0}", score);
+
+                    if (score < 40)
+                    {
+                        Console.WriteLine("This is a FAIL score");
+                    }
+                    else
+                    {
+                        Console.WriteLine("This is a PASS score");
+                        if (score >= 75)
+                        {
+                            Console.WriteLine("You did very well!");
+                        }
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("This is a PASS score");
-                    if (score >= 75)
-                    {
-                        Console.WriteLine("You did very well!");
-                    }
+                    Console.WriteLine("Oh dear - you have entered an invalid test score");
                 }
             }
             else
             {
-                //here is the error messages if you input the wrong score value don't input a number
-                Console.WriteLine("Oh dear - you have entered an invalid test score");
+                Console.WriteLine("Invalid input. Please enter a valid numeric test score.");
             }
         }
-        else
-        {
-            Console.WriteLine("Invalid input. Please enter a valid numeric test score.");
-        }
-
-        // Repeat the code to allow the user to enter new input
-        Main();
     }
 }
