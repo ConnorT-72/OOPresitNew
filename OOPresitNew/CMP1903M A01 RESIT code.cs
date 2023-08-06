@@ -15,6 +15,7 @@ public class TestScore
         Console.WriteLine("Enter the test score: ");
         if (double.TryParse(Console.ReadLine(), out score))
         {
+            //this section is what defines what test scores are a pass or fail
             if (score >= 0 && score <= 100)
             {
                 Console.WriteLine("Hello {0}", name);
@@ -35,6 +36,7 @@ public class TestScore
             }
             else
             {
+                //here is the error messages if you input the wrong score value don't input a number
                 Console.WriteLine("Oh dear - you have entered an invalid test score");
             }
         }
