@@ -4,11 +4,12 @@ public class TestScore
 {
     public static void Main()
     {
+        //variables
         string name;
         double score;
 
         Console.WriteLine("Welcome to the Acme Student Test Score commentator");
-
+        //if exit is typed program closes if not it carries on
         while (true)
         {
             Console.WriteLine("Enter your name (or 'exit' to quit): ");
@@ -16,7 +17,7 @@ public class TestScore
 
             if (name.ToLower() == "exit")
                 break;
-
+            //the statements that allow the code to work as intended
             Console.WriteLine("Enter the test score: ");
             if (double.TryParse(Console.ReadLine(), out score))
             {
