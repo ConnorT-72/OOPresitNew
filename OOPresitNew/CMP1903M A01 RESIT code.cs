@@ -7,7 +7,7 @@ public class TestScore
         string name;
         double score;
 
-        Console.WriteLine("Welcome to the Acme Student Test Score commentator");
+        Console.WriteLine("Welcome to the Acme Student Test Score commentor");
 
         Console.WriteLine("Enter your name: ");
         name = Console.ReadLine();
